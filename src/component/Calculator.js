@@ -1,6 +1,6 @@
 import React, {component} from 'react';
 import KeyPadComponent from './KeyPadComponent'
-import ResultComponent from './ResultComponent'
+import Result from './Result'
 
 class Calculator extends component{
     constructor(){
@@ -15,7 +15,7 @@ class Calculator extends component{
         <div>
             <div className="calculator-body">
                 <h1>Calculator</h1>
-                <ResultComponent result={this.state.result}/>
+                <Result result={this.state.result}/>
                 <KeyPadComponent onClick={this.onClick}/>
             </div>
         </div>

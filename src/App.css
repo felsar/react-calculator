@@ -31,3 +31,44 @@
     transform: rotate(360deg);
   }
 }
+
+
+/*************************************/
+#root{
+  text-align: center;
+}
+#calculator {
+  width: auto;
+  padding: 10px;
+  background: #f9f8ca;
+  border: solid #CCC 1px;
+  border-radius: 5%;
+  margin: auto auto;
+  display: inline-block;
+}
+.result {
+  width: 100%;
+  background: #FFF;
+  height: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.58);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.58);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.58);
+  text-align: right;
+}
+.result p{
+  padding: 2px 5px;
+  height: 1.5em;
+}
+
+h1{
+  margin: 0 auto;
+}
+
+.button button {
+  margin: 5px;
+  padding: 5px;
+  font-size: 12px;
+  width: 40px;
+  display: inline-block;
+}

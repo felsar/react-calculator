@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 //import Number from './component/Number';
-import KeyPadComponent from './component/KeyPadComponent'
+import KeyPad from './component/KeyPad'
 import Result from './component/Result'
 
 class App extends Component{
@@ -9,11 +9,34 @@ class App extends Component{
       super();
 
       this.state={
-          result:" "
+          result:" ",
+          isEmpty:true
       }
   }
 
-  onClick = button =>{
+  onClick = (button) =>{
+    if(button ==="=")
+        this.calculate()
+    else if(button==="C")
+        this.reset()
+    else if(button === "CE")
+        this.backspace()
+    else
+        this.setState({
+            result:this.state.result+button
+        })
+  }
+
+  useButton(button){
+      console.log("button")
+    if(this.state.isEmpty){
+        console.log("IsEmpty")
+        this.setState({
+            result:"",
+            isEmpty: (this.state.isEmpty && false)
+        })
+    }
+        
     if(button ==="=")
         this.calculate()
     else if(button==="C")
@@ -54,11 +77,13 @@ class App extends Component{
 
   render() {
     return (
-        <div>
+        <div id="calculator">
             <div className="calculator-body">
                 <h1>Calculator</h1>
-                <Result result={this.state.result}/>
-                <KeyPadComponent onClick={this.onClick}/>
+                <Result result={this.state.result} other="1"/>
+                {/*<KeyPadComponent onClick={this.onClick}/>*/}
+                <KeyPad onClick={(b) =>this.useButton(b)} />
+
             </div>
         </div>
     )
